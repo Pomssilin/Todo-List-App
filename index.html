@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App | WebDevASMR</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo-image">
+        <img src="assets/logo.png" alt="" />
+      </div>
+      <div class="todos">
+        <ul id="todos-nav">
+          <li>
+            <button data-filter="all" class="active">
+              <i class="fa-solid fa-box-archive"></i>
+              <span class="link-name">All</span>
+            </button>
+          </li>
+          <li>
+            <button data-filter="today">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span class="link-name">Today</span>
+            </button>
+          </li>
+          <li>
+            <button data-filter="overdue">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span class="link-name">Overdue</span>
+            </button>
+          </li>
+
+          <li>
+            <button data-filter="scheduled">
+              <i class="fa-solid fa-clock"></i>
+              <span class="link-name">Scheduled</span>
+            </button>
+          </li>
+          <li>
+            <button data-filter="pending">
+              <i class="fa-regular fa-circle"></i>
+              <span class="link-name">Pending</span>
+            </button>
+          </li>
+          <li>
+            <button data-filter="completed">
+              <i class="fa-regular fa-circle-check"></i>
+              <span class="link-name">Completed</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="dashboard">
+      <div class="forms">
+        <form class="boxes" id="add-todo-form">
+          <input
+            type="text"
+            name="todo-text"
+            id="todo-text"
+            placeholder="Todo..."
+            required
+          />
+          <textarea
+            type="text"
+            name="todo-description"
+            id="todo-description"
+            placeholder="Description..."
+            required
+          ></textarea>
+          <input type="date" name="todo-date" id="todo-date" required />
+          <select name="todo-priority" id="todo-priority" required>
+            <option selected disabled >Select Priority</option> 
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button id="add-todo-btn" class="active" type="submit">
+            <i class='bx bx-plus-circle add-icon '></i>
+            Add Task
+          </button>
+        </form>
+      </div>
+
+      <div id="success-message" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 128, 0, 0.8); color: white; padding: 20px; border-radius: 10px; font-size: 18px; text-align: center; z-index: 1000;">
+        Todo added successfully!
+      </div>
+      
+      <div class="dash-content">
+        <div class="title">
+          <h2 class="text">To-Do List<img src="assets/icon.png" /></h2>
+        </div>
+        <div class="form-table">
+          <div class="tables">
+            <div class="tbl-header">
+              <table id="todos-table">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Priority</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table id="todos-table">
+                <tbody>
+                  <!-- To-do items will be inserted here dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

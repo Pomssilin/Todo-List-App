@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #eef5ff;
+}
+
+:root {
+  /* ===== Colors ===== */
+  --primary-color: #0e4bf1;
+  --panel-color: #fff;
+  --text-color: #000;
+  --black-light-color: #707070;
+  --border-color: #e6e5e5;
+  --toggle-color: #ddd;
+  --box1-color: #4da3ff;
+  --box2-color: #ffe6ac;
+  --box3-color: #e7d1fc;
+  --title-icon-color: #fff;
+
+  /* ====== Transition ====== */
+  --tran-05: all 0.5s ease;
+  --tran-03: all 0.3s ease;
+  --tran-03: all 0.2s ease;
+}
+
+button {
+  display: flex;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fdc7a8;
+  font-size: 15px;
+  height: 54px;
+  transition: all 300ms ease-in-out;
+  font-weight: 600;
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+}
+
+button .regular {
+  color: #000;
+}
+
+button .delet-btn{
+  color: #ff4848;
+}
+
+.link-name {
+  margin-left: 10px;
+}
+
+button.active {
+  color: #ff5945;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background-color: #0c4a60;
+  transition: var(--tran-05);
+  border-top-right-radius: 100px;
+}
+
+nav .logo-image {
+  justify-content: center;
+  min-width: 45px;
+}
+
+nav .logo-image img {
+  width: 200px;
+}
+
+.todos li {
+  list-style: none;
+}
+
+.dashboard {
+  position: relative;
+  left: 250px;
+  width: calc(100% - 250px);
+  padding: 10px 14px;
+  transition: var(--tran-05);
+}
+
+.dashboard .dash-content {
+  margin-top: 50px;
+}
+
+.dash-content .title {
+  margin: 0px 0 20px 0;
+}
+
+.dash-content h2 {
+  color: #002765;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.title h2 img {
+  width: 40px;
+  margin-left: 12px;
+}
+
+
+#add-todo-form input,
+#add-todo-form textarea,
+#add-todo-form select {
+  padding: 8px;
+  font-size: 16px;
+  border: 0px ;
+  border-radius: 5px;
+  background-color: #c8e3ee;
+}
+
+.boxes{
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#add-todo-form button {
+  margin-top: 5px;
+  color: white;
+  background-color:  #ff5945;
+}
+button  .add-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+#add-todo-form button:hover{
+  color: white;
+  background-color:  #0c4a60;
+}
+
+
+.priority {
+  display: inline-block; /* Ensures the padding affects width */
+  width: 80px; /* Set a fixed width */
+  height: 30px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
+  text-align: center; /* Center text horizontally */
+  border-radius: 5px;
+  color: #000;
+}
+
+
+.low {
+  background-color: #4caf50; 
+}
+
+.medium {
+  background-color: #ff9800;
+}
+
+.high {
+  background-color: #f44336;
+}
+
+.form-table {
+  width: 100%; /* Make the form-table take full width */
+  
+}
+
+.tables {
+  width: 100%; /* Make the tables container take full width */
+}
+
+#todos-table {
+  width: 100%; /* Make the table take full width */
+  border-collapse: collapse; /* Collapse borders for better appearance */
+}
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+#todos-table th, 
+#todos-table td {
+  padding: 12px; /* Adjust padding for better spacing */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #e6e5e5; /* Add a bottom border for separation */
+}
+
+#todos-table th {
+  background-color: #f1f1f1; /* Optional: add a background color for the header */
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
